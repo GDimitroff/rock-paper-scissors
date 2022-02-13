@@ -11,10 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap"
-      rel="stylesheet"
-    />
     <title>Rock Paper Scissors</title>
     <script defer src="./app.js"></script>
   </head>
@@ -33,6 +29,7 @@
           <button class="settings-btn">3</button>
           <button class="settings-btn">5</button>
           <button class="settings-btn">10</button>
+          <button class="settings-btn">Infinity</button>
         </div>
       </header>
 
@@ -55,9 +52,21 @@
       <div class="actions">
         <h2>Choose your weapon</h2>
         <div class="buttons">
-          <button class="btn btn-rock">Rock</button>
-          <button class="btn btn-paper">Paper</button>
-          <button class="btn btn-scissors">Scissors</button>
+          <button class="btn btn-rock">
+            <div class="img img-rock">
+              <img src="./images/rock.png" alt="Rock" />
+            </div>
+          </button>
+          <button class="btn btn-paper">
+            <div class="img img-paper">
+              <img src="./images/paper.png" alt="Paper" />
+            </div>
+          </button>
+          <button class="btn btn-scissors">
+            <div class="img img-scissors">
+              <img src="./images/scissors.png" alt="Scissors" />
+            </div>
+          </button>
         </div>
       </div>
     </main>
