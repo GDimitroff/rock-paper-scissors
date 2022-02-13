@@ -1,0 +1,149 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 1.6rem;
+  background-color: #1f2937;
+  color: #d1d5db;
+}
+
+.header {
+  background-color: #111827;
+  padding: 4.8rem;
+  font-family: 'Rowdies', cursive;
+}
+
+.rock {
+  color: #dc2626;
+}
+
+.paper {
+  color: #facc15;
+}
+
+.scissors {
+  color: #22d3ee;
+}
+
+.header-heading {
+  font-size: 4.2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-heading span:not(:last-child) {
+  margin-right: 2.8rem;
+}
+
+.settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4.8rem;
+}
+
+.settings-buttons {
+  margin-left: 2rem;
+}
+
+.settings-buttons button:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.settings-btn {
+  border: 0;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  background-color: #d1d5db;
+  transition: all 0.4s;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.settings-btn:hover {
+  background-color: #fff;
+}
+
+.action {
+  border: 3px dashed #d1d5db;
+  background-color: #111827;
+  border-radius: 6px;
+  width: 35%;
+  height: 30rem;
+  margin: 4.8rem auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: center;
+  padding: 2rem 6rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6.8rem;
+}
+
+.buttons {
+  margin-top: 3.2rem;
+}
+
+.buttons button:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.btn {
+  width: 8rem;
+  height: 8rem;
+  border: 3px solid #d1d5db;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  transform: scale(1.2);
+}
+
+.btn-rock {
+  background-color: #dc2626;
+}
+
+.btn-paper {
+  background-color: #facc15;
+}
+
+.btn-scissors {
+  background-color: #22d3ee;
+}
+
+.footer {
+  background-color: #111827;
+  color: #e2e8f0;
+  font-size: 1.4rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.8rem;
+}
