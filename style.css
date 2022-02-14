@@ -42,6 +42,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  letter-spacing: -4px;
 }
 
 .header-heading span:not(:last-child) {
@@ -53,6 +54,10 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 4.8rem;
+}
+
+.settings-heading {
+  letter-spacing: 1px;
 }
 
 .settings-buttons {
@@ -79,69 +84,74 @@ body {
 }
 
 .game {
-  border: 3px solid #d1d5db;
-  background-color: #111827;
-  border-radius: 6px;
-  width: 40%;
-  height: 30rem;
-  margin: 4.8rem auto 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: space-between;
+  background-color: #1f2937;
   padding: 6rem;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
-}
-
-.action {
   display: flex;
-  justify-content: space-between;
+  margin-top: 4.8rem;
+  justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.box {
+.game > div:not(:last-child) {
+  margin-right: 9.6rem;
+}
+
+.game-box-heading {
+  font-size: 1.8rem;
+}
+
+.game-box-image {
   width: 14rem;
   height: 14rem;
-  border: 3px dashed #9ca3af;
   color: #9ca3af;
   border-radius: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 5.2rem;
+  margin: 2rem 0;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.fist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  height: 12rem;
+}
+
+.left-fist {
+  transform: rotate(90deg);
+}
+
+.right-fist {
+  transform: rotateY(180deg) rotate(90deg);
 }
 
 .versus {
   align-self: center;
-  font-size: 9rem;
+  font-size: 4.6rem;
   color: #c40909;
-  transform: rotate(-7.5deg);
   text-shadow: 4px 3px 0px #e4e6e9, 9px 8px 0px rgba(0, 0, 0, 0.15);
 }
 
-.scores {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  margin-top: 2rem;
-}
-
 .score {
-  font-size: 1.8rem;
+  font-size: 3.6rem;
 }
 
-.actions {
+.action {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 6.8rem;
+  margin-top: 4.8rem;
 }
 
 .buttons {
   display: flex;
-  margin-top: 3.2rem;
+  margin-top: 1.8rem;
 }
 
 .buttons button:not(:last-child) {
@@ -149,15 +159,17 @@ body {
 }
 
 .btn {
-  width: 12rem;
-  height: 12rem;
-  border: 3px solid #d1d5db;
+  width: 8rem;
+  height: 8rem;
+  border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.4s;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .btn-rock {
@@ -183,23 +195,23 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 1.8rem;
+  padding: 1.4rem;
 }
 
 .img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 8rem;
-  height: 8rem;
+  width: 6rem;
+  height: 6rem;
+  transform: rotate(90deg);
   transition: all 0.4s;
 }
 
 .img:hover {
-  transform: scale(1.4);
+  transform: rotate(90deg) scale(1.2);
 }
 
 .img img {
   width: 100%;
-  fill: #c40909;
 }

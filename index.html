@@ -24,7 +24,7 @@
 
     <main>
       <header class="settings">
-        <h2>You want to play the best of...?</h2>
+        <h2 class="settings-heading">Play the best of...?</h2>
         <div class="settings-buttons">
           <button class="settings-btn">3</button>
           <button class="settings-btn">5</button>
@@ -34,22 +34,24 @@
       </header>
 
       <section class="game">
-        <div class="action">
-          <div class="box" id="playerBox">
-            <div class="player-box">?</div>
+        <div class="game-box">
+          <p class="game-box-heading">Player</p>
+          <div class="game-box-image">
+            <img class="fist left-fist" src="./images/rock.png" alt="Fist" />
           </div>
-          <div class="versus">VS</div>
-          <div class="box" id="computerBox">
-            <div class="computer-box">?</div>
-          </div>
+          <p class="score" id="playerScore">0</p>
         </div>
-        <div class="scores">
-          <p class="score" id="playerScore">Player: 0</p>
-          <p class="score" id="computerScore">Computer: 0</p>
+        <div class="versus">VS</div>
+        <div class="game-box">
+          <p class="game-box-heading">Computer</p>
+          <div class="game-box-image">
+            <img class="fist right-fist" src="./images/rock.png" alt="Fist" />
+          </div>
+          <p class="score" id="computerScore">0</p>
         </div>
       </section>
 
-      <div class="actions">
+      <div class="action">
         <h2>Choose your weapon</h2>
         <div class="buttons">
           <button class="btn btn-rock">
