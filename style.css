@@ -17,11 +17,17 @@ body {
   font-size: 1.6rem;
   background-color: #1f2937;
   color: #d1d5db;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .header {
   background-color: #111827;
-  padding: 4.8rem;
+  padding: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .rock {
@@ -49,26 +55,78 @@ body {
   margin-right: 2.8rem;
 }
 
-.settings {
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+}
+
+.buttons button:not(:last-child) {
+  margin-right: 3.2rem;
+}
+
+.btn {
+  width: 10rem;
+  height: 10rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 4.8rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-.settings-heading {
+.btn-rock {
+  background-color: #16a34a;
+}
+
+.btn-paper {
+  background-color: #facc15;
+}
+
+.btn-scissors {
+  background-color: #c026d3;
+}
+
+.img {
+  width: 6rem;
+  height: 6rem;
+  transform: rotate(90deg);
+  transition: all 0.4s;
+}
+
+.img:hover {
+  transform: rotate(90deg) scale(1.4);
+}
+
+.img img {
+  width: 100%;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5.6rem;
+}
+
+.options-heading {
   letter-spacing: 1px;
+  margin-bottom: 1rem;
 }
 
-.settings-buttons {
-  margin-left: 2rem;
+.options-buttons button:not(:last-child) {
+  margin-right: 0.4em;
 }
 
-.settings-buttons button:not(:last-child) {
-  margin-right: 1rem;
-}
-
-.settings-btn {
+.options-btn {
   border: 0;
   padding: 0.8rem 1.6rem;
   cursor: pointer;
@@ -79,22 +137,16 @@ body {
   font-weight: 700;
 }
 
-.settings-btn:hover {
+.options-btn:hover {
   background-color: #fff;
 }
 
-.game {
-  background-color: #1f2937;
-  padding: 6rem;
+.game-container {
   display: flex;
   margin-top: 4.8rem;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.game > div:not(:last-child) {
-  margin-right: 9.6rem;
 }
 
 .game-box-heading {
@@ -111,8 +163,6 @@ body {
   align-items: center;
   font-size: 5.2rem;
   margin: 2rem 0;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .fist {
@@ -142,83 +192,23 @@ body {
   font-size: 3.6rem;
 }
 
-.action {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4.8rem;
-}
-
-.buttons {
-  display: flex;
-  margin-top: 1.8rem;
-}
-
-.buttons button:not(:last-child) {
-  margin-right: 3.2rem;
-}
-
-.btn {
-  width: 8rem;
-  height: 8rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.4s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
-}
-
-.btn-rock {
-  background-color: #16a34a;
-}
-
-.btn-paper {
-  background-color: #facc15;
-}
-
-.btn-scissors {
-  background-color: #c026d3;
-}
-
 .footer {
   background-color: #111827;
   color: #e2e8f0;
   font-size: 1.4rem;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 1.4rem;
-}
-
-.footer p:last-child {
-  margin-top: 0.6rem;
-}
-
-.img {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 6rem;
-  height: 6rem;
-  transform: rotate(90deg);
-  transition: all 0.4s;
-}
-
-.img:hover {
-  transform: rotate(90deg) scale(1.2);
-}
-
-.img img {
-  width: 100%;
+  padding: 2.2rem;
+  border-top: 5px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(
+    90deg,
+    rgba(22, 163, 74, 1) 0%,
+    rgba(250, 204, 21, 1) 50%,
+    rgba(192, 38, 211, 1) 100%
+  );
+  box-shadow: rgb(0 0 0 / 80%) 0px -20px 30px -10px;
 }
 
 a:link,

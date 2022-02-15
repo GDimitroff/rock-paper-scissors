@@ -1,9 +1,18 @@
+const options = document.querySelectorAll('.settings-btn');
 const buttons = document.querySelectorAll('.btn');
+
+options.forEach((option) => option.addEventListener('click', startGame));
 buttons.forEach((button) => button.addEventListener('click', playRound));
 
+let rounds = 0;
 let playerScore = 0;
 let computerScore = 0;
 let round = 0;
+
+function startGame(e) {
+  rounds = e.target.textContent;
+  document.querySelector('.game').classList.add('game-slide-in');
+}
 
 function playRound(e) {
   const playerSelection = e.target.textContent.toLowerCase();

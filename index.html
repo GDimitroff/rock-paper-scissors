@@ -23,58 +23,59 @@
     </header>
 
     <main>
-      <header class="settings">
-        <h2 class="settings-heading">Play the best of...?</h2>
-        <div class="settings-buttons">
-          <button class="settings-btn">3</button>
-          <button class="settings-btn">5</button>
-          <button class="settings-btn">10</button>
-          <button class="settings-btn">Infinity</button>
-        </div>
-      </header>
-
       <section class="game">
-        <div class="game-box">
-          <p class="game-box-heading">Player</p>
-          <div class="game-box-image">
-            <img class="fist left-fist" src="./images/rock.png" alt="Fist" />
+        <div class="action">
+          <div class="buttons">
+            <!-- <h2>Play this classic game, you against your computer!</h2> -->
+            <button class="btn btn-rock">
+              <div class="img img-rock">
+                <img src="./images/rock.png" alt="Rock" />
+              </div>
+            </button>
+            <button class="btn btn-paper">
+              <div class="img img-paper">
+                <img src="./images/paper.png" alt="Paper" />
+              </div>
+            </button>
+            <button class="btn btn-scissors">
+              <div class="img img-scissors">
+                <img src="./images/scissors.png" alt="Scissors" />
+              </div>
+            </button>
           </div>
-          <p class="score" id="playerScore">0</p>
         </div>
-        <div class="versus">VS</div>
-        <div class="game-box">
-          <p class="game-box-heading">Computer</p>
-          <div class="game-box-image">
-            <img class="fist right-fist" src="./images/rock.png" alt="Fist" />
-          </div>
-          <p class="score" id="computerScore">0</p>
-        </div>
-      </section>
 
-      <div class="action">
-        <h2>Choose your weapon</h2>
-        <div class="buttons">
-          <button class="btn btn-rock">
-            <div class="img img-rock">
-              <img src="./images/rock.png" alt="Rock" />
-            </div>
-          </button>
-          <button class="btn btn-paper">
-            <div class="img img-paper">
-              <img src="./images/paper.png" alt="Paper" />
-            </div>
-          </button>
-          <button class="btn btn-scissors">
-            <div class="img img-scissors">
-              <img src="./images/scissors.png" alt="Scissors" />
-            </div>
-          </button>
+        <div class="options">
+          <h2 class="options-heading">Play the best of...?</h2>
+          <div class="options-buttons">
+            <button class="options-btn">3</button>
+            <button class="options-btn">5</button>
+            <button class="options-btn">10</button>
+            <button class="options-btn">Infinity</button>
+          </div>
         </div>
-      </div>
+
+        <!-- <div class="game-container">
+          <div class="game-box">
+            <p class="game-box-heading">Player</p>
+            <div class="game-box-image">
+              <img class="fist left-fist" src="./images/rock.png" alt="Fist" />
+            </div>
+            <p class="score" id="playerScore">0</p>
+          </div>
+          <div class="versus">VS</div>
+          <div class="game-box">
+            <p class="game-box-heading">Computer</p>
+            <div class="game-box-image">
+              <img class="fist right-fist" src="./images/rock.png" alt="Fist" />
+            </div>
+            <p class="score" id="computerScore">0</p>
+          </div>
+        </div> -->
+      </section>
     </main>
 
     <footer class="footer">
-      <p>ROCK PAPERS SCISSORS &copy; 2022</p>
       <p>
         Made with ❤️ by
         <a href="https://github.com/GDimitroff" target="_blank"
