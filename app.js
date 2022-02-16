@@ -2,7 +2,6 @@ const options = document.querySelectorAll('.options-btn');
 const buttons = document.querySelectorAll('.btn');
 
 options.forEach((option) => option.addEventListener('click', startGame));
-buttons.forEach((button) => button.addEventListener('click', playRound));
 
 let rounds = 0;
 let playerScore = 0;
@@ -10,11 +9,12 @@ let computerScore = 0;
 let round = 0;
 
 function startGame(e) {
+  buttons.forEach((button) => button.addEventListener('click', playRound));
   rounds = e.target.textContent;
-  document.querySelector('.action').classList.add('action-active');
+  document.querySelector('.buttons').classList.add('buttons-active');
   document.querySelector('.options').classList.add('fade-out');
   setInterval(() => {
-    document.querySelector('.game-container').classList.add('fade-in');
+    document.querySelector('.game-box').classList.add('fade-in');
   }, 1000);
 }
 
