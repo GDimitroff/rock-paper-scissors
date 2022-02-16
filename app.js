@@ -15,6 +15,7 @@ function startGame(e) {
   document.querySelector('.options').classList.add('fade-out');
   setInterval(() => {
     document.querySelector('.game-box').classList.add('fade-in');
+    document.querySelector('.buttons-info').classList.add('fade-in');
   }, 1000);
 }
 

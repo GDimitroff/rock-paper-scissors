@@ -69,7 +69,7 @@ main {
 .game-box {
   width: 50rem;
   position: absolute;
-  top: 15%;
+  top: 17%;
 
   opacity: 0;
   pointer-events: none;
@@ -127,6 +127,19 @@ main {
 
 .buttons {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  top: -4rem;
+}
+
+.buttons-info {
+  opacity: 0;
+  flex-basis: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
 }
 
 .buttons button:not(:last-child) {
@@ -179,7 +192,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5.6rem;
+  margin-top: 2.6rem;
 }
 
 .options-heading {
@@ -243,7 +256,7 @@ a:hover {
 }
 
 .buttons-active {
-  transform: translateY(25rem);
+  transform: translateY(30rem);
   transition: all 1s ease-in-out;
 }
 
