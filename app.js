@@ -1,4 +1,4 @@
-const options = document.querySelectorAll('.settings-btn');
+const options = document.querySelectorAll('.options-btn');
 const buttons = document.querySelectorAll('.btn');
 
 options.forEach((option) => option.addEventListener('click', startGame));
@@ -11,7 +11,11 @@ let round = 0;
 
 function startGame(e) {
   rounds = e.target.textContent;
-  document.querySelector('.game').classList.add('game-slide-in');
+  document.querySelector('.action').classList.add('action-active');
+  document.querySelector('.options').classList.add('fade-out');
+  setInterval(() => {
+    document.querySelector('.game-container').classList.add('fade-in');
+  }, 1000);
 }
 
 function playRound(e) {

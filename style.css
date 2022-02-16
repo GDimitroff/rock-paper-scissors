@@ -12,15 +12,16 @@ html {
 
 body {
   font-family: 'Rowdies', cursive;
-  line-height: 1;
-  font-weight: 400;
   font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1;
+
   background-color: #1f2937;
   color: #d1d5db;
-  height: 100vh;
+
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .header {
@@ -44,113 +45,41 @@ body {
 
 .header-heading {
   font-size: 4.8rem;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   letter-spacing: -4px;
+  text-align: center;
 }
 
 .header-heading span:not(:last-child) {
   margin-right: 2.8rem;
 }
 
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .game {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-}
-
-.buttons {
-  display: flex;
-}
-
-.buttons button:not(:last-child) {
-  margin-right: 3.2rem;
-}
-
-.btn {
-  width: 10rem;
-  height: 10rem;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
-}
-
-.btn-rock {
-  background-color: #16a34a;
-}
-
-.btn-paper {
-  background-color: #facc15;
-}
-
-.btn-scissors {
-  background-color: #c026d3;
-}
-
-.img {
-  width: 6rem;
-  height: 6rem;
-  transform: rotate(90deg);
-  transition: all 0.4s;
-}
-
-.img:hover {
-  transform: rotate(90deg) scale(1.4);
-}
-
-.img img {
-  width: 100%;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 5.6rem;
-}
-
-.options-heading {
-  letter-spacing: 1px;
-  margin-bottom: 1rem;
-}
-
-.options-buttons button:not(:last-child) {
-  margin-right: 0.4em;
-}
-
-.options-btn {
-  border: 0;
-  padding: 0.8rem 1.6rem;
-  cursor: pointer;
-  background-color: #d1d5db;
-  border-radius: 6px;
-  transition: all 0.4s;
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-
-.options-btn:hover {
-  background-color: #fff;
 }
 
 .game-container {
   display: flex;
-  margin-top: 4.8rem;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  opacity: 1;
+  border: 3px solid red;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .game-box-heading {
+  width: 100%;
   font-size: 1.8rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .game-box-image {
@@ -192,13 +121,99 @@ body {
   font-size: 3.6rem;
 }
 
-.footer {
-  background-color: #111827;
-  color: #e2e8f0;
-  font-size: 1.4rem;
+.buttons {
+  display: flex;
+}
+
+.buttons button:not(:last-child) {
+  margin-right: 3.2rem;
+}
+
+.btn {
+  width: 11rem;
+  height: 11rem;
+  border: 3px solid #fff;
+  border-radius: 50%;
+
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  cursor: pointer;
+}
+
+.btn-rock {
+  background-color: #16a34a;
+}
+
+.btn-paper {
+  background-color: #facc15;
+}
+
+.btn-scissors {
+  background-color: #c026d3;
+}
+
+.img {
+  width: 7rem;
+  height: 7rem;
+  transform: rotate(90deg);
+  transition: all 0.4s;
+}
+
+.img:hover {
+  transform: rotate(90deg) scale(1.4);
+}
+
+.img img {
+  width: 100%;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5.6rem;
+}
+
+.options-heading {
+  font-weight: 100;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.options-buttons button:not(:last-child) {
+  margin-right: 0.4em;
+}
+
+.options-btn {
+  border: 0;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  background-color: #d1d5db;
+  border-radius: 6px;
+  transition: all 0.4s;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.options-btn:hover {
+  background-color: #fff;
+}
+
+.footer {
   padding: 2.2rem;
+  font-size: 1.4rem;
+  background-color: #111827;
+  color: #e2e8f0;
+
+  display: flex;
+  justify-content: center;
+
   border-top: 5px solid;
   border-image-slice: 1;
   border-width: 5px;
@@ -208,7 +223,8 @@ body {
     rgba(250, 204, 21, 1) 50%,
     rgba(192, 38, 211, 1) 100%
   );
-  box-shadow: rgb(0 0 0 / 80%) 0px -20px 30px -10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px -19px 38px,
+    rgba(0, 0, 0, 0.22) 0px -15px 12px;
 }
 
 a:link,
@@ -220,4 +236,21 @@ a:visited {
 a:active,
 a:hover {
   color: #9ca3af;
+}
+
+.action-active {
+  transform: translateY(25rem);
+  transition: all 1s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  pointer-events: all;
+  transition: all 1s ease-in-out;
 }
