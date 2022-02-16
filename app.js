@@ -11,12 +11,12 @@ let round = 0;
 function startGame(e) {
   buttons.forEach((button) => button.addEventListener('click', playRound));
   rounds = e.target.textContent;
-  document.querySelector('.buttons').classList.add('buttons-active');
+
+  document.querySelector('.buttons').classList.add('fade-in');
   document.querySelector('.options').classList.add('fade-out');
   setInterval(() => {
     document.querySelector('.game-box').classList.add('fade-in');
-    document.querySelector('.buttons-info').classList.add('fade-in');
-  }, 1000);
+  }, 500);
 }
 
 function playRound(e) {

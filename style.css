@@ -67,21 +67,23 @@ main {
 }
 
 .game-box {
-  width: 50rem;
+  width: 55rem;
   position: absolute;
   top: 17%;
 
-  opacity: 0;
   pointer-events: none;
+  opacity: 0;
 }
 
 .game-info {
-  text-align: center;
   font-size: 1.8rem;
+  padding: 3rem 3rem 3rem 4.4rem;
+  margin-bottom: 3.8rem;
+  text-align: center;
+
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 3rem 3rem 3rem 4.4rem;
 }
 
 .player-score,
@@ -129,16 +131,12 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  position: relative;
-  top: -4rem;
+  margin-top: 8rem;
 }
 
-.buttons-info {
-  opacity: 0;
-  flex-basis: 100%;
+.buttons-heading {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2.8rem;
+  flex-basis: 100%;
   margin-bottom: 3rem;
 }
 
@@ -149,8 +147,8 @@ main {
 .btn {
   width: 8rem;
   height: 8rem;
-  border: 3px solid #fff;
   border-radius: 50%;
+  border: 2px solid transparent;
 
   display: flex;
   justify-content: center;
@@ -159,6 +157,11 @@ main {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
   cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  border: 2px solid #fff;
 }
 
 .btn-rock {
@@ -192,10 +195,18 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2.6rem;
 }
 
-.options-heading {
+.options-primary-heading {
+  font-size: 2.8rem;
+  font-weight: 400;
+  text-align: center;
+  opacity: 1;
+  flex-basis: 100%;
+  margin-bottom: 2rem;
+}
+
+.options-secondary-heading {
   font-weight: 100;
   line-height: 1.2;
   text-align: center;
@@ -255,19 +266,14 @@ a:hover {
   color: #9ca3af;
 }
 
-.buttons-active {
-  transform: translateY(30rem);
-  transition: all 1s ease-in-out;
-}
-
 .fade-out {
   opacity: 0;
   pointer-events: none;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .fade-in {
   opacity: 1;
   pointer-events: all;
-  transition: all 1s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
