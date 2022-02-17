@@ -21,6 +21,9 @@ function startGame(e) {
   const computerFist = document.querySelector('.right-fist');
 
   function playRound() {
+    playerFist.src = './images/rock.png';
+    computerFist.src = './images/rock.png';
+
     actions.forEach((action) => action.removeEventListener('click', playRound));
 
     if (currentRound === 0) {
@@ -28,7 +31,7 @@ function startGame(e) {
     } else {
       round.textContent = currentRound + 1;
     }
-    
+
     const playerSelection = this.dataset.name;
     const computerSelection = computerPlay();
 
@@ -62,6 +65,9 @@ function startGame(e) {
     setTimeout(() => {
       playerFist.style.animation = '';
       computerFist.style.animation = '';
+
+      playerFist.src = `./images/${playerSelection}.png`;
+      computerFist.src = `./images/${computerSelection}.png`;
 
       const result = document.querySelector('.buttons-heading');
       if (roundWinner === 'player') {
