@@ -16,6 +16,9 @@ function startGame(e) {
 
   actions.forEach((action) => action.addEventListener('click', playRound));
 
+  const playerFist = document.querySelector('.left-fist');
+  const computerFist = document.querySelector('.right-fist');
+
   function playRound() {
     actions.forEach((action) => action.removeEventListener('click', playRound));
 
@@ -46,27 +49,35 @@ function startGame(e) {
         break;
     }
 
-    const result = document.querySelector('.buttons-heading');
-    if (roundWinner === 'player') {
-      playerScore.textContent = Number(playerScore.textContent) + 1;
-      result.textContent = `You won the round! ${infoText}!`;
-    } else if (roundWinner === 'computer') {
-      computerScore.textContent = Number(computerScore.textContent) + 1;
-      result.textContent = `You lost the round! ${infoText}!`;
-    } else {
-      result.textContent = "It's a tie!";
-    }
+    playerFist.style.animation = 'shakePlayer 1s';
+    computerFist.style.animation = 'shakeComputer 1s';
+    
+    setTimeout(() => {
+      playerFist.style.animation = '';
+      computerFist.style.animation = '';
 
-    if (playerScore.textContent === bestOf) {
-      result.textContent = 'You won the game!';
-      return;
-    } else if (computerScore.textContent === bestOf) {
-      result.textContent = 'You lost the game!';
-      return;
-    }
+      const result = document.querySelector('.buttons-heading');
+      if (roundWinner === 'player') {
+        playerScore.textContent = Number(playerScore.textContent) + 1;
+        result.textContent = `You won the round! ${infoText}!`;
+      } else if (roundWinner === 'computer') {
+        computerScore.textContent = Number(computerScore.textContent) + 1;
+        result.textContent = `You lost the round! ${infoText}!`;
+      } else {
+        result.textContent = "It's a tie!";
+      }
 
-    currentRound.textContent = Number(currentRound.textContent) + 1;
-    actions.forEach((action) => action.addEventListener('click', playRound));
+      if (playerScore.textContent === bestOf) {
+        result.textContent = 'You won the game!';
+        return;
+      } else if (computerScore.textContent === bestOf) {
+        result.textContent = 'You lost the game!';
+        return;
+      }
+
+      actions.forEach((action) => action.addEventListener('click', playRound));
+      currentRound.textContent = Number(currentRound.textContent) + 1;
+    }, 1000);
   }
 
   function computerPlay() {
