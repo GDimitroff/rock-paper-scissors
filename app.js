@@ -9,10 +9,11 @@ function startGame(e) {
   options.classList.add('fade-out');
   gameBox.classList.add('fade-in');
 
-  const bestOf = e.target.textContent;
+  const targetPoints = e.target.textContent;
+  const round = document.querySelector('.round');
   let playerScore = document.querySelector('.player-score');
   let computerScore = document.querySelector('.computer-score');
-  let currentRound = document.querySelector('.round');
+  let currentRound = 0;
 
   actions.forEach((action) => action.addEventListener('click', playRound));
 
@@ -22,6 +23,12 @@ function startGame(e) {
   function playRound() {
     actions.forEach((action) => action.removeEventListener('click', playRound));
 
+    if (currentRound === 0) {
+      round.textContent = 1;
+    } else {
+      round.textContent = currentRound + 1;
+    }
+    
     const playerSelection = this.dataset.name;
     const computerSelection = computerPlay();
 
@@ -51,7 +58,7 @@ function startGame(e) {
 
     playerFist.style.animation = 'shakePlayer 1s';
     computerFist.style.animation = 'shakeComputer 1s';
-    
+
     setTimeout(() => {
       playerFist.style.animation = '';
       computerFist.style.animation = '';
@@ -67,16 +74,16 @@ function startGame(e) {
         result.textContent = "It's a tie!";
       }
 
-      if (playerScore.textContent === bestOf) {
+      if (playerScore.textContent === targetPoints) {
         result.textContent = 'You won the game!';
         return;
-      } else if (computerScore.textContent === bestOf) {
+      } else if (computerScore.textContent === targetPoints) {
         result.textContent = 'You lost the game!';
         return;
       }
 
+      currentRound++;
       actions.forEach((action) => action.addEventListener('click', playRound));
-      currentRound.textContent = Number(currentRound.textContent) + 1;
     }, 1000);
   }
 
