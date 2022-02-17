@@ -18,45 +18,50 @@ function startGame(e) {
 
   function playRound() {
     actions.forEach((action) => action.removeEventListener('click', playRound));
+
     const playerSelection = this.dataset.name;
     const computerSelection = computerPlay();
-    const result = document.querySelector('.buttons-heading');
-
-    console.log(`You chose ${playerSelection}.`);
-    console.log(`Computer chose ${computerSelection}.`);
 
     let roundWinner = '';
+    let infoText = '';
     switch (true) {
       case playerSelection === 'rock' && computerSelection == 'scissors':
       case playerSelection === 'paper' && computerSelection == 'rock':
       case playerSelection === 'scissors' && computerSelection == 'paper':
         roundWinner = 'player';
+        infoText = `${
+          playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)
+        } beats ${computerSelection}`;
         break;
       case playerSelection === 'rock' && computerSelection == 'paper':
       case playerSelection === 'paper' && computerSelection == 'scissors':
       case playerSelection === 'scissors' && computerSelection == 'rock':
         roundWinner = 'computer';
+        infoText = `${
+          playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)
+        } is beaten by ${computerSelection}`;
         break;
       case playerSelection === computerSelection:
         roundWinner = 'tie';
         break;
     }
 
+    const result = document.querySelector('.buttons-heading');
     if (roundWinner === 'player') {
       playerScore.textContent = Number(playerScore.textContent) + 1;
-      result.textContent = 'You win!';
+      result.textContent = `You won the round! ${infoText}!`;
     } else if (roundWinner === 'computer') {
       computerScore.textContent = Number(computerScore.textContent) + 1;
-      result.textContent = 'You loose!';
+      result.textContent = `You lost the round! ${infoText}!`;
     } else {
       result.textContent = "It's a tie!";
     }
 
     if (playerScore.textContent === bestOf) {
-      result.textContent = 'You won!';
+      result.textContent = 'You won the game!';
       return;
     } else if (computerScore.textContent === bestOf) {
-      result.textContent = 'You lost!';
+      result.textContent = 'You lost the game!';
       return;
     }
 
