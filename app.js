@@ -59,8 +59,8 @@ function startGame(e) {
         break;
     }
 
-    playerFist.style.animation = 'shakePlayer 1s';
-    computerFist.style.animation = 'shakeComputer 1s';
+    playerFist.style.animation = 'shakePlayer 1s ease-in-out';
+    computerFist.style.animation = 'shakeComputer 1s ease-in-out';
 
     setTimeout(() => {
       playerFist.style.animation = '';
@@ -80,12 +80,28 @@ function startGame(e) {
         result.textContent = "It's a tie!";
       }
 
-      if (playerScore.textContent === targetPoints) {
-        result.textContent = 'You won the game!';
-        return;
-      } else if (computerScore.textContent === targetPoints) {
-        result.textContent = 'You lost the game!';
-        return;
+      if (
+        playerScore.textContent === targetPoints ||
+        computerScore.textContent === targetPoints
+      ) {
+        const overlay = document.getElementById('overlay');
+        const modal = document.getElementById('modal');
+        const endgameMessage = document.querySelector('.modal-heading');
+        const restartBtn = document.querySelector('.btn-restart');
+        overlay.classList.add('active');
+        modal.classList.add('active');
+
+        if (playerScore.textContent === targetPoints) {
+          endgameMessage.textContent = 'You won!';
+          endgameMessage.style.backgroundColor = '#15803d';
+        } else if (computerScore.textContent === targetPoints) {
+          endgameMessage.textContent = 'You lost!';
+          endgameMessage.style.backgroundColor = '#b91c1c';
+        }
+
+        restartBtn.addEventListener('click', () => {
+          location.reload();
+        });
       }
 
       currentRound++;
