@@ -1,11 +1,21 @@
 const gameBox = document.querySelector('.game-box');
 const options = document.querySelector('.options');
 const actions = document.querySelectorAll('.btn');
+const overlay = document.getElementById('overlay');
+const modal = document.getElementById('modal');
+const endgameMessage = document.querySelector('.modal-heading');
+const playerFist = document.querySelector('.left-fist');
+const computerFist = document.querySelector('.right-fist');
+
 options
   .querySelectorAll('.options-btn')
   .forEach((option) => option.addEventListener('click', startGame));
 
 function startGame(e) {
+  playerFist.src = './images/rock.png';
+  computerFist.src = './images/rock.png';
+  overlay.classList.remove('active');
+  modal.classList.remove('active');
   options.classList.add('fade-out');
   gameBox.classList.add('fade-in');
 
@@ -13,12 +23,13 @@ function startGame(e) {
   const round = document.querySelector('.round');
   let playerScore = document.querySelector('.player-score');
   let computerScore = document.querySelector('.computer-score');
+
+  round.textContent = 1;
+  playerScore.textContent = 0;
+  computerScore.textContent = 0;
   let currentRound = 0;
 
   actions.forEach((action) => action.addEventListener('click', playRound));
-
-  const playerFist = document.querySelector('.left-fist');
-  const computerFist = document.querySelector('.right-fist');
 
   function playRound() {
     playerFist.src = './images/rock.png';
@@ -84,10 +95,6 @@ function startGame(e) {
         playerScore.textContent === targetPoints ||
         computerScore.textContent === targetPoints
       ) {
-        const overlay = document.getElementById('overlay');
-        const modal = document.getElementById('modal');
-        const endgameMessage = document.querySelector('.modal-heading');
-        const restartBtn = document.querySelector('.btn-restart');
         overlay.classList.add('active');
         modal.classList.add('active');
 
@@ -99,9 +106,10 @@ function startGame(e) {
           endgameMessage.style.backgroundColor = '#b91c1c';
         }
 
-        restartBtn.addEventListener('click', () => {
-          location.reload();
-        });
+        document
+          .querySelectorAll('.options-btn')
+          .forEach((option) => option.addEventListener('click', startGame));
+        return;
       }
 
       currentRound++;

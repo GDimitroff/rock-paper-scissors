@@ -323,20 +323,8 @@ a:hover {
   color: #e2e8f0;
 }
 
-.btn-restart {
-  border: 0;
-  padding: 1.4rem 3rem;
-  margin-top: 4rem;
-  cursor: pointer;
-  background-color: #d1d5db;
-  border-radius: 6px;
-  transition: all 0.4s;
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-
-.btn-restart:hover {
-  background-color: #fff;
+.modal-text {
+  margin: 2rem 0;
 }
 
 .overlay {
