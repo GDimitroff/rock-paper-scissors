@@ -13,13 +13,12 @@ options
   .forEach((option) => option.addEventListener('click', startGame));
 
 function startGame(e) {
-  result.textContent = 'Choose wisely';
+  options.classList.add('fade-out');
+  gameBox.classList.remove('fade-out');
+  gameBox.classList.add('fade-in');
+
   playerFist.src = './images/rock.png';
   computerFist.src = './images/rock.png';
-  overlay.classList.remove('active');
-  modal.classList.remove('active');
-  options.classList.add('fade-out');
-  gameBox.classList.add('fade-in');
 
   const targetPoints = e.target.textContent;
   const round = document.querySelector('.round');
@@ -30,6 +29,7 @@ function startGame(e) {
   playerScore.textContent = 0;
   computerScore.textContent = 0;
   let currentRound = 0;
+  result.textContent = 'Choose wisely';
 
   actions.forEach((action) => action.addEventListener('click', playRound));
 
@@ -108,9 +108,18 @@ function startGame(e) {
           endgameMessage.style.backgroundColor = '#b91c1c';
         }
 
-        document
-          .querySelectorAll('.options-btn')
-          .forEach((option) => option.addEventListener('click', startGame));
+        document.querySelectorAll('.options-btn').forEach((option) =>
+          option.addEventListener('click', (e) => {
+            overlay.classList.remove('active');
+            modal.classList.remove('active');
+            gameBox.classList.remove('fade-in');
+            gameBox.classList.add('fade-out');
+            setTimeout(() => {
+              startGame(e);
+            }, 500);
+          })
+        );
+
         return;
       }
 
