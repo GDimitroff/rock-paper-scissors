@@ -6,12 +6,14 @@ const modal = document.getElementById('modal');
 const endgameMessage = document.querySelector('.modal-heading');
 const playerFist = document.querySelector('.left-fist');
 const computerFist = document.querySelector('.right-fist');
+const result = document.querySelector('.buttons-heading');
 
 options
   .querySelectorAll('.options-btn')
   .forEach((option) => option.addEventListener('click', startGame));
 
 function startGame(e) {
+  result.textContent = 'Choose wisely';
   playerFist.src = './images/rock.png';
   computerFist.src = './images/rock.png';
   overlay.classList.remove('active');
