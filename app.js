@@ -13,10 +13,7 @@ options
   .forEach((option) => option.addEventListener('click', startGame));
 
 function startGame(e) {
-  overlay.classList.remove('active');
-  modal.classList.remove('active');
   options.classList.add('fade-out');
-  gameBox.classList.remove('fade-out');
   gameBox.classList.add('fade-in');
 
   playerFist.src = './images/rock.png';
@@ -112,7 +109,9 @@ function startGame(e) {
 
         document
           .querySelectorAll('.options-btn')
-          .forEach((option) => option.addEventListener('click', startGame));
+          .forEach((option) =>
+            option.addEventListener('click', prepareGameField)
+          );
 
         return;
       }
@@ -127,4 +126,16 @@ function startGame(e) {
     const randomIndex = Math.floor(Math.random() * 3);
     return signs[randomIndex];
   }
+}
+
+function prepareGameField(e) {
+  overlay.classList.remove('active');
+  modal.classList.remove('active');
+  gameBox.classList.add('fade-out');
+  gameBox.classList.remove('fade-in');
+  setTimeout(() => {
+    gameBox.classList.remove('fade-out');
+    gameBox.classList.add('fade-in');
+    startGame(e);
+  }, 500);
 }
