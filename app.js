@@ -13,6 +13,8 @@ options
   .forEach((option) => option.addEventListener('click', startGame));
 
 function startGame(e) {
+  overlay.classList.remove('active');
+  modal.classList.remove('active');
   options.classList.add('fade-out');
   gameBox.classList.remove('fade-out');
   gameBox.classList.add('fade-in');
@@ -85,10 +87,10 @@ function startGame(e) {
       const result = document.querySelector('.buttons-heading');
       if (roundWinner === 'player') {
         playerScore.textContent = Number(playerScore.textContent) + 1;
-        result.textContent = `You won the round! ${infoText}!`;
+        result.innerHTML = `<span style="color: #15803d;">You won the round!</span> ${infoText}!`;
       } else if (roundWinner === 'computer') {
         computerScore.textContent = Number(computerScore.textContent) + 1;
-        result.textContent = `You lost the round! ${infoText}!`;
+        result.innerHTML = `<span style="color: #b91c1c;">You lost the round!</span> ${infoText}!`;
       } else {
         result.textContent = "It's a tie!";
       }
@@ -108,17 +110,9 @@ function startGame(e) {
           endgameMessage.style.backgroundColor = '#b91c1c';
         }
 
-        document.querySelectorAll('.options-btn').forEach((option) =>
-          option.addEventListener('click', (e) => {
-            overlay.classList.remove('active');
-            modal.classList.remove('active');
-            gameBox.classList.remove('fade-in');
-            gameBox.classList.add('fade-out');
-            setTimeout(() => {
-              startGame(e);
-            }, 500);
-          })
-        );
+        document
+          .querySelectorAll('.options-btn')
+          .forEach((option) => option.addEventListener('click', startGame));
 
         return;
       }
