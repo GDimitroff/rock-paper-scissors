@@ -120,15 +120,15 @@ main {
   height: 12rem;
 }
 
-.fist {
+.sign {
   width: 100%;
 }
 
-.left-fist {
+.player-sign {
   transform: rotate(90deg);
 }
 
-.right-fist {
+.computer-sign {
   transform: rotateY(180deg) rotate(90deg);
 }
 
