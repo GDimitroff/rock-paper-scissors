@@ -138,7 +138,9 @@ function openEndgameModal(playerScore, computerScore) {
     endgameMessage.style.backgroundColor = 'var(--primary-red)';
   }
 
-  overlay.addEventListener('click', closeEndgameModal);
+  setTimeout(() => {
+    overlay.addEventListener('click', closeEndgameModal);
+  }, 500);
 
   document
     .querySelectorAll('.modal-btn')

@@ -36,6 +36,10 @@ body {
   user-select: none;
 }
 
+/******************************/
+/* HEADER */
+/******************************/
+
 .header {
   background-color: var(--secondary-dark);
   padding: 3rem;
@@ -64,6 +68,10 @@ body {
 .header-heading span:not(:last-child) {
   margin-right: 2.8rem;
 }
+
+/******************************/
+/* GAME BOX */
+/******************************/
 
 main {
   flex: 1;
@@ -156,6 +164,10 @@ main {
   text-shadow: 4px 3px 0px #e4e6e9, 9px 8px 0px rgba(0, 0, 0, 0.15);
 }
 
+/******************************/
+/* ACTION BUTTONS */
+/******************************/
+
 .buttons {
   display: flex;
   flex-wrap: wrap;
@@ -222,6 +234,10 @@ main {
   width: 100%;
 }
 
+/******************************/
+/* START GAME OPTIONS */
+/******************************/
+
 .options {
   display: flex;
   flex-direction: column;
@@ -273,6 +289,10 @@ main {
   background-color: var(--primary-light-hover);
 }
 
+/******************************/
+/* FOOTER */
+/******************************/
+
 .footer {
   padding: 2.2rem;
   font-size: 1.4rem;
@@ -318,6 +338,10 @@ a:active,
 a:hover {
   color: var(--primary-light-hover);
 }
+
+/******************************/
+/* MODAL */
+/******************************/
 
 .modal {
   text-align: center;
@@ -392,6 +416,10 @@ a:hover {
   transition: all 0.4s ease-in-out;
 }
 
+/******************************/
+/* ANIMATIONS */
+/******************************/
+
 @keyframes shakePlayer {
   0% {
     transform: rotate(90deg) translateX(0px);
@@ -465,5 +493,56 @@ a:hover {
 
   100% {
     transform: rotateY(180deg) rotate(90deg) translateX(0px);
+  }
+}
+
+/*******************************/
+/* MEDIA QUERIES */
+/*******************************/
+
+/************************************/
+/* BELOW 1200px (Landscape Tablets) */
+/************************************/
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .game-box {
+    top: 23%;
+  }
+}
+
+/************************************/
+/* BELOW 940px (Tablets)            */
+/************************************/
+
+@media (max-width: 59em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+/************************************/
+/* BELOW 544px (Phones)             */
+/************************************/
+
+@media (max-width: 34em) {
+  .header {
+    padding: 3rem 0;
+  }
+
+  .header-heading {
+    font-size: 3.8rem;
+  }
+
+  .header-heading span:not(:last-child) {
+    margin-right: 1.8rem;
+  }
+
+  .game-box {
+    top: 13%;
+    width: auto;
   }
 }
