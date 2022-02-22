@@ -74,6 +74,13 @@ main {
 
   pointer-events: none;
   opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.game-box.active {
+  opacity: 1;
+  pointer-events: all;
+  transition: all 0.4s ease-in-out 0.4s;
 }
 
 .game-info {
@@ -208,6 +215,14 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
+}
+
+.options.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .options-primary-heading {
@@ -249,6 +264,7 @@ main {
 .footer {
   padding: 2.2rem;
   font-size: 1.4rem;
+  font-weight: 100;
   background-color: #111827;
   color: #e2e8f0;
 
@@ -288,7 +304,7 @@ a:hover {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
   z-index: 1;
 
   width: 55rem;
@@ -313,6 +329,7 @@ a:hover {
 }
 
 .modal.active {
+  transform: translate(-50%, -50%) scale(1);
   opacity: 1;
   pointer-events: all;
   transition: all 0.4s ease-in-out;
@@ -342,26 +359,13 @@ a:hover {
   background-color: #1f2937;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.4s;
-}
-
-.overlay.active {
-  display: block;
-  opacity: 0.7;
-  pointer-events: all;
-  transition: all 0.4s;
-}
-
-.fade-out {
-  opacity: 0;
-  pointer-events: none;
   transition: all 0.4s ease-in-out;
 }
 
-.fade-in {
-  opacity: 1;
+.overlay.active {
+  opacity: 0.8;
   pointer-events: all;
-  transition: all 0.4s ease-in-out 0.6s;
+  transition: all 0.4s ease-in-out;
 }
 
 @keyframes shakePlayer {

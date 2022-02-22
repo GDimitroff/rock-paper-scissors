@@ -19,8 +19,8 @@ options
   .forEach((option) => option.addEventListener('click', startGame));
 
 function startGame(e) {
-  options.classList.add('fade-out');
-  gameBox.classList.add('fade-in');
+  options.classList.remove('active');
+  gameBox.classList.add('active');
 
   targetPoints = e.target.textContent;
 
@@ -155,11 +155,9 @@ function closeEndgameModal() {
 function restartGame(e) {
   overlay.classList.remove('active');
   modal.classList.remove('active');
-  gameBox.classList.add('fade-out');
-  gameBox.classList.remove('fade-in');
+  gameBox.classList.remove('active');
   setTimeout(() => {
-    gameBox.classList.remove('fade-out');
-    gameBox.classList.add('fade-in');
+    gameBox.classList.add('active');
     round.textContent = 1;
     playerScore.textContent = 0;
     computerScore.textContent = 0;
@@ -169,5 +167,5 @@ function restartGame(e) {
     computerSign.src = './images/rock.png';
     roundResult.textContent = 'Choose wisely';
     startGame(e);
-  }, 500);
+  }, 400);
 }
