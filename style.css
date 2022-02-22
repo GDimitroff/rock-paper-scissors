@@ -1,3 +1,14 @@
+:root {
+  --primary-light: #d1d5db;
+  --primary-light-hover: #fff;
+  --primary-dark: #1f2937;
+  --secondary-dark: #111827;
+  --primary-green: #15803d;
+  --primary-yellow: #facc15;
+  --primary-purple: #c026d3;
+  --primary-red: #c40909;
+}
+
 *,
 *::after,
 *::before {
@@ -16,8 +27,8 @@ body {
   font-weight: 400;
   line-height: 1;
 
-  background-color: #1f2937;
-  color: #d1d5db;
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
 
   display: flex;
   min-height: 100vh;
@@ -26,22 +37,22 @@ body {
 }
 
 .header {
-  background-color: #111827;
+  background-color: var(--secondary-dark);
   padding: 3rem;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .rock {
-  color: #16a34a;
+  color: var(--primary-green);
 }
 
 .paper {
-  color: #facc15;
+  color: var(--primary-yellow);
 }
 
 .scissors {
-  color: #c026d3;
+  color: var(--primary-purple);
 }
 
 .header-heading {
@@ -114,9 +125,9 @@ main {
   border-width: 3px;
   border-image-source: linear-gradient(
     90deg,
-    rgba(22, 163, 74, 1) 0%,
-    rgba(250, 204, 21, 1) 50%,
-    rgba(192, 38, 211, 1) 100%
+    var(--primary-green) 0%,
+    var(--primary-yellow) 50%,
+    var(--primary-purple) 100%
   );
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -141,7 +152,7 @@ main {
 
 .versus {
   font-size: 4.6rem;
-  color: #c40909;
+  color: var(--primary-red);
   text-shadow: 4px 3px 0px #e4e6e9, 9px 8px 0px rgba(0, 0, 0, 0.15);
 }
 
@@ -181,19 +192,19 @@ main {
 }
 
 .btn:hover {
-  border: 2px solid #fff;
+  border: 2px solid var(--primary-light-hover);
 }
 
 .btn-rock {
-  background-color: #16a34a;
+  background-color: var(--primary-green);
 }
 
 .btn-paper {
-  background-color: #facc15;
+  background-color: var(--primary-yellow);
 }
 
 .btn-scissors {
-  background-color: #c026d3;
+  background-color: var(--primary-purple);
 }
 
 .img {
@@ -242,15 +253,16 @@ main {
   margin-bottom: 1rem;
 }
 
-.options-buttons button:not(:last-child) {
-  margin-right: 0.4em;
+.options-buttons button:not(:last-child),
+.modal-buttons button:not(:last-child) {
+  margin-right: 0.4rem;
 }
 
 .options-btn {
   border: 0;
   padding: 0.8rem 1.6rem;
   cursor: pointer;
-  background-color: #d1d5db;
+  background-color: var(--primary-light);
   border-radius: 6px;
   transition: all 0.4s;
   font-size: 1.6rem;
@@ -258,15 +270,15 @@ main {
 }
 
 .options-btn:hover {
-  background-color: #fff;
+  background-color: var(--primary-light-hover);
 }
 
 .footer {
   padding: 2.2rem;
   font-size: 1.4rem;
   font-weight: 100;
-  background-color: #111827;
-  color: #e2e8f0;
+  background-color: var(--secondary-dark);
+  color: var(--primary-light);
 
   display: flex;
   justify-content: center;
@@ -276,23 +288,35 @@ main {
   border-width: 5px;
   border-image-source: linear-gradient(
     90deg,
-    rgba(22, 163, 74, 1) 0%,
-    rgba(250, 204, 21, 1) 50%,
-    rgba(192, 38, 211, 1) 100%
+    var(--primary-green) 0%,
+    var(--primary-yellow) 50%,
+    var(--primary-purple) 100%
   );
   box-shadow: rgba(0, 0, 0, 0.3) 0px -19px 38px,
     rgba(0, 0, 0, 0.22) 0px -15px 12px;
 }
 
+.footer p {
+  display: flex;
+  align-items: center;
+}
+
+.footer > p > .emoji {
+  font-size: 1.8rem;
+  color: var(--primary-red);
+  margin: auto 0.4rem;
+}
+
 a:link,
 a:visited {
-  color: #e2e8f0;
+  color: var(--primary-light);
+  margin-left: 0.4rem;
   transition: all 0.4s;
 }
 
 a:active,
 a:hover {
-  color: #9ca3af;
+  color: var(--primary-light-hover);
 }
 
 .modal {
@@ -317,9 +341,9 @@ a:hover {
   border-width: 5px;
   border-image-source: linear-gradient(
     90deg,
-    rgba(22, 163, 74, 1) 0%,
-    rgba(250, 204, 21, 1) 50%,
-    rgba(192, 38, 211, 1) 100%
+    var(--primary-green) 0%,
+    var(--primary-yellow) 50%,
+    var(--primary-purple) 100%
   );
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -341,7 +365,7 @@ a:hover {
   font-weight: 400;
   padding: 4rem 2rem;
   margin-bottom: 3rem;
-  color: #e2e8f0;
+  color: var(--primary-light);
 }
 
 .modal-text {
@@ -356,7 +380,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #1f2937;
+  background-color: var(--primary-dark);
   opacity: 0;
   pointer-events: none;
   transition: all 0.4s ease-in-out;

@@ -117,10 +117,10 @@ function updateScore(
 
   if (roundWinner === 'player') {
     playerScore.textContent = Number(playerScore.textContent) + 1;
-    roundResult.innerHTML = `<span style="color: #15803d;">You won the round!</span> ${infoText}!`;
+    roundResult.innerHTML = `<span style="color: var(--primary-green);">You won the round!</span> ${infoText}!`;
   } else if (roundWinner === 'computer') {
     computerScore.textContent = Number(computerScore.textContent) + 1;
-    roundResult.innerHTML = `<span style="color: #b91c1c;">You lost the round!</span> ${infoText}!`;
+    roundResult.innerHTML = `<span style="color: var(--primary-red);">You lost the round!</span> ${infoText}!`;
   } else {
     roundResult.textContent = "It's a tie!";
   }
@@ -132,10 +132,10 @@ function openEndgameModal(playerScore, computerScore) {
 
   if (playerScore.textContent === targetPoints) {
     endgameMessage.textContent = 'You won!';
-    endgameMessage.style.backgroundColor = '#15803d';
+    endgameMessage.style.backgroundColor = 'var(--primary-green)';
   } else if (computerScore.textContent === targetPoints) {
     endgameMessage.textContent = 'You lost!';
-    endgameMessage.style.backgroundColor = '#b91c1c';
+    endgameMessage.style.backgroundColor = 'var(--primary-red)';
   }
 
   overlay.addEventListener('click', closeEndgameModal);
