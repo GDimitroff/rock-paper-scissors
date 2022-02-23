@@ -365,7 +365,7 @@ a:hover {
   transform: translate(-50%, -50%) scale(0);
   z-index: 1;
 
-  width: 40rem;
+  width: 55rem;
   padding-bottom: 6rem;
 
   background-color: #1f2937;
@@ -554,5 +554,9 @@ a:hover {
 
   .header-heading span:not(:last-child) {
     margin-right: 1.8rem;
+  }
+
+  .modal {
+    width: 40rem;
   }
 }
