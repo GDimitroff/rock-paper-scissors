@@ -15,6 +15,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -77,26 +78,20 @@ main {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .game {
+  width: 55rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.game-box {
-  width: 55rem;
-  position: absolute;
-  top: 17%;
+  justify-content: space-evenly;
 
   pointer-events: none;
   opacity: 0;
   transition: all 0.4s ease-in-out;
 }
 
-.game-box.active {
+.game.active {
   opacity: 1;
   pointer-events: all;
   transition: all 0.4s ease-in-out 0.4s;
@@ -105,7 +100,6 @@ main {
 .game-info {
   font-size: 1.8rem;
   padding: 3rem 3rem 3rem 4.4rem;
-  margin-bottom: 3.8rem;
   text-align: center;
 
   display: flex;
@@ -126,7 +120,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4.4rem 1rem;
+  padding: 5.4rem 1rem;
   border-top: 3px solid;
   border-bottom: 3px solid;
   border-image-slice: 1;
@@ -172,15 +166,22 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 8rem;
+  padding: 4rem 3rem;
 }
 
-.buttons-heading {
+.buttons-primary-heading {
   font-weight: 100;
   font-size: 2.2rem;
   text-align: center;
   flex-basis: 100%;
-  margin-bottom: 3rem;
+  margin-bottom: 0.4rem;
+}
+
+.buttons-secondary-heading {
+  font-weight: 100;
+  flex-basis: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .buttons button:not(:last-child) {
@@ -242,6 +243,12 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   opacity: 0;
   pointer-events: none;
   transition: all 0.4s ease-in-out;
@@ -355,7 +362,7 @@ a:hover {
   transform: translate(-50%, -50%) scale(0);
   z-index: 1;
 
-  width: 55rem;
+  width: 40rem;
   padding-bottom: 6rem;
 
   background-color: #1f2937;
@@ -508,10 +515,6 @@ a:hover {
   html {
     font-size: 56.25%;
   }
-
-  .game-box {
-    top: 23%;
-  }
 }
 
 /************************************/
@@ -522,6 +525,10 @@ a:hover {
   html {
     font-size: 50%;
   }
+
+  .options-primary-heading {
+    margin-bottom: 5rem;
+  }
 }
 
 /************************************/
@@ -529,20 +536,20 @@ a:hover {
 /************************************/
 
 @media (max-width: 34em) {
+  .game {
+    width: 40rem;
+  }
+
   .header {
     padding: 3rem 0;
   }
 
   .header-heading {
-    font-size: 3.8rem;
+    font-size: 3.2rem;
+    letter-spacing: -2px;
   }
 
   .header-heading span:not(:last-child) {
     margin-right: 1.8rem;
-  }
-
-  .game-box {
-    top: 13%;
-    width: auto;
   }
 }

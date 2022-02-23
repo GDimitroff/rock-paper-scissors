@@ -1,4 +1,4 @@
-const gameBox = document.querySelector('.game-box');
+const game = document.querySelector('.game');
 const options = document.querySelector('.options');
 const actions = document.querySelectorAll('.btn');
 const overlay = document.getElementById('overlay');
@@ -6,7 +6,8 @@ const modal = document.getElementById('modal');
 const endgameMessage = document.querySelector('.modal-heading');
 const playerSign = document.querySelector('.player-sign');
 const computerSign = document.querySelector('.computer-sign');
-const roundResult = document.querySelector('.buttons-heading');
+const roundResult = document.querySelector('.buttons-primary-heading');
+const roundResultText = document.querySelector('.buttons-secondary-heading');
 const round = document.querySelector('.round');
 const playerScore = document.querySelector('.player-score');
 const computerScore = document.querySelector('.computer-score');
@@ -20,7 +21,7 @@ options
 
 function startGame(e) {
   options.classList.remove('active');
-  gameBox.classList.add('active');
+  game.classList.add('active');
 
   targetPoints = e.target.textContent;
 
@@ -100,6 +101,9 @@ function playRound(playerSelection, computerSelection) {
       break;
     case playerSelection === computerSelection:
       roundWinner = 'tie';
+      infoText = `${
+        playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)
+      } ties with ${computerSelection}`;
       break;
   }
 
@@ -117,13 +121,15 @@ function updateScore(
 
   if (roundWinner === 'player') {
     playerScore.textContent = Number(playerScore.textContent) + 1;
-    roundResult.innerHTML = `<span style="color: var(--primary-green);">You won the round!</span> ${infoText}!`;
+    roundResult.innerHTML = `<span style="color: var(--primary-green);">You won the round!</span>`;
   } else if (roundWinner === 'computer') {
     computerScore.textContent = Number(computerScore.textContent) + 1;
-    roundResult.innerHTML = `<span style="color: var(--primary-red);">You lost the round!</span> ${infoText}!`;
+    roundResult.innerHTML = `<span style="color: var(--primary-red);">You lost the round!</span>`;
   } else {
-    roundResult.textContent = "It's a tie!";
+    roundResult.textContent = "Tie!";
   }
+
+  roundResultText.textContent = infoText;
 }
 
 function openEndgameModal(playerScore, computerScore) {
@@ -157,9 +163,9 @@ function closeEndgameModal() {
 function restartGame(e) {
   overlay.classList.remove('active');
   modal.classList.remove('active');
-  gameBox.classList.remove('active');
+  game.classList.remove('active');
   setTimeout(() => {
-    gameBox.classList.add('active');
+    game.classList.add('active');
     round.textContent = 1;
     playerScore.textContent = 0;
     computerScore.textContent = 0;
@@ -168,6 +174,7 @@ function restartGame(e) {
     playerSign.src = './images/rock.png';
     computerSign.src = './images/rock.png';
     roundResult.textContent = 'Choose wisely';
+    roundResultText.textContent = '..but fast';
     startGame(e);
   }, 400);
 }
