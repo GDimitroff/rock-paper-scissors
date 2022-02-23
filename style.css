@@ -20,9 +20,13 @@
 
 html {
   font-size: 62.5%;
+  height: -webkit-fill-available;
 }
 
 body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+
   font-family: 'Rowdies', cursive;
   font-size: 1.6rem;
   font-weight: 400;
@@ -32,7 +36,6 @@ body {
   color: var(--primary-light);
 
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
   user-select: none;
 }
